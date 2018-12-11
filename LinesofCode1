@@ -1,0 +1,54 @@
+//PAGE 1: DEAR FUTURE GENERATIONS... "SORRY" WITH FIRE/PERLIN NOISE BACKGROUND 
+				if (sceneId==1){
+						background(184,67,52); //clear screen to red color
+					
+					//SMOKE PERLIN NOISE: attempt 2
+						//variables for smoke perlin noise 
+						var increment = 0.012; //increment pixels 
+						var ysc = 300; 
+					
+							//load pixels 
+								loadPixels();
+										for (var x = 0; x < width; x+=1) { //increment x until width 
+											var xsc = 10;
+											for (var y = 0; y < height; y+=1) {
+												var index = (x + y * width) * 2;
+												var smoke = noise(xsc, ysc) * 350; 
+													pixels[index + 2] = smoke;
+													pixels[index + 1] = smoke;
+													pixels[index + 2] = smoke;
+													pixels[index + 4] = 300;
+												
+												xsc += increment;
+												
+											} //closing bracket of second for loop 
+											
+												ysc += increment;
+											
+										} //closing bracket of first for loop 
+					
+								//update smoke pixels 
+										updatePixels();
+						
+						//string to display text:"Dear Future Generations"
+						var t = "Dear Future Generations...";  
+							fill(0); //fill black text
+							textFont('Times New Roman'); //text font Times New Roman 
+							textSize(100); //text size 32 (as title)
+							textAlign(CENTER,CENTER); //align text in center of page 
+							text(t,700,200); //display string at bottom of page  
+					
+						//string to display text: "SORRY" --MAKE IT POP UP ON SCREEN HUGE
+						var sorry = "SORRY"; 
+							fill(255); //fill white text
+							textFont('Times New Roman'); //text font Times New Roman
+							textSize(200); //make larger text size to emphasize 
+							textAlign(CENTER,CENTER);
+					
+						//make letters move around 
+						sorry.split("").forEach((letter,lid)=>{
+							text(letter,300+lid*150,350 + sin(lid +frameCount/7)*500);
+						})
+						 
+					
+				}//end bracket of sceneId=1 
