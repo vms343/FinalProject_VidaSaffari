@@ -1,0 +1,46 @@
+	//SCREEN 14:INCREMENT ELLIPSE OF DESTROYED EARTH TO BLACK SCREEN  
+			if(sceneId==14){
+				
+				background(0); //black background of space
+				
+				//string to display text: "But What Is The Reality Of The Situation?"  
+						var save = "Let's Not Be Sorry...Let's Promise to Save Our Only Home";  
+						fill(255); //fill white text
+						textFont('Times New Roman'); //text font Times New Roman 
+						textSize(40); //text size 32 (as title)
+						//textAlign(CENTER,CENTER); //align text in center of page 
+						text(save,550,100); //display string in middle of page
+				
+				//sun explosion
+				
+					//setup 
+					background(0); //black background 
+					blendMode(ADD);
+					noFill();
+					stroke(500,100,8,30); //sun lines that will be redrawn 
+	
+					//drawing sun shape 
+						translate(width/2.5, height/2.5);
+				
+					//if less than maximum, begin creating shape 
+						if(counter <= max_iterations){
+								beginShape(); //sun shape 
+							
+						//start array of sun enlarging 
+						for(var i = 0 ; i < points; i++){
+							n +=  delta_n; 
+							n2 += delta_n2;
+							noize = noise(n) * max_size;
+							noize2 = noise(n2) * random(0,4 * PI); //make random noise levels 
+							curveVertex(noize * cos(i * noize2 ), noize * sin(i * noize2 )); //variables of sun 
+						}  
+						 endShape(CLOSE); //end of shape 
+						}
+						else{
+							noLoop(); //stop iterating if 
+						}
+						counter += 1;
+
+						background(0); //redraw black background 
+
+			} //closing bracket of sceneId = 14
