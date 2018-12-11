@@ -1,26 +1,26 @@
 //PAGE 4: EARTH IMAGERY WITH "WHAT IS ACTUALLY HAPPENING TEXT..."
-			if(sceneId==4){
-				background(0); //black background of space
+	if(sceneId==4){
+		background(0); //black background of space
 				
-				//string to display text: "But What Is The Reality Of The Situation?"  
-						var e = "But What Is The Reality Of The Situation?";  
-						fill(255); //fill white text
-						textFont('Times New Roman'); //text font Times New Roman 
-						textSize(40); //text size 32 (as title)
-						//textAlign(CENTER,CENTER); //align text in center of page 
-						text(e,400,100); //display string in middle of page
+	//string to display text: "But What Is The Reality Of The Situation?"  
+		var e = "But What Is The Reality Of The Situation?";  
+		fill(255); //fill white text
+		textFont('Times New Roman'); //text font Times New Roman 
+		textSize(40); //text size 32 (as title)
+		//textAlign(CENTER,CENTER); //align text in center of page 
+		text(e,400,100); //display string in middle of page
 				
-				//earth that rotates 
-						subcanvas.translate(0,0,0);
-						subcanvas.fill(40,38,191);
-						subcanvas.push(); //push matrix
-						subcanvas.rotateZ(frameCount * 0.1);
-						subcanvas.rotateX(frameCount * 0.1);
-						subcanvas.rotateY(frameCount * 0.01);
-						subcanvas.texture(earthmap); //draw earth's texture with uploaded earthmap image 
-						subcanvas.sphere(200); //draw sphere
-						subcanvas.pop(); //pop matrix 
-						image(subcanvas,0,0); //draw image on subcanvas  
+	//earth that rotates 
+		subcanvas.translate(0,0,0);
+		subcanvas.fill(40,38,191);
+		subcanvas.push(); //push matrix
+		subcanvas.rotateZ(frameCount * 0.1);
+		subcanvas.rotateX(frameCount * 0.1);
+		subcanvas.rotateY(frameCount * 0.01);
+		subcanvas.texture(earthmap); //draw earth's texture with uploaded earthmap image 
+		subcanvas.sphere(200); //draw sphere
+		subcanvas.pop(); //pop matrix 
+		image(subcanvas,0,0); //draw image on subcanvas  
 		
-			} //closing bracket of sceneId = 4
+} //closing bracket of sceneId = 4
 	
